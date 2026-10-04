@@ -288,6 +288,9 @@ int32_t vpad_choose_user(const int32_t login[4], int32_t init, int32_t fore, con
     return -1;
 }
 
+#ifndef ANYPAD_BIND_USER_PATH
+#define ANYPAD_BIND_USER_PATH "/data/anypad/bind_user"
+#endif
 static int32_t main_user(void)
 {
     int32_t login[4] = { -1, -1, -1, -1 }, init = -1, fore = -1, seen[6];
@@ -299,7 +302,7 @@ static int32_t main_user(void)
     if (sceUserServiceGetLoginUserIdList(login) != 0) login[0] = login[1] = login[2] = login[3] = -1;
     if (sceUserServiceGetInitialUser(&init) != 0) init = -1;
     if (sceUserServiceGetForegroundUser(&fore) != 0) fore = -1;
-    if ((f = fopen("/data/anypad/bind_user", "r"))) {
+    if ((f = fopen(ANYPAD_BIND_USER_PATH, "r"))) {
         if (fgets(want, sizeof want, f)) {
             for (i = 0; want[i]; i++) if (want[i] == '\n' || want[i] == '\r' || want[i] == ' ') want[i] = 0;
             if (strncmp(want, "0x", 2) == 0) memmove(want, want + 2, strlen(want + 2) + 1);

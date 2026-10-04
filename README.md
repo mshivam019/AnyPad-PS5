@@ -1,6 +1,6 @@
 <p align="center"><img src="assets/logo.png" width="180" alt="AnyPad PS5"></p>
 
-> Experimental Redgear direct USB support: see [setup and test status](usb/README.md).
+> Redgear direct USB support: see [setup and test status](usb/README.md).
 > Console menu input was confirmed on firmware 9.00; game compatibility remains unverified.
 
 # AnyPad PS5 — Free your PS5 from the DualSense

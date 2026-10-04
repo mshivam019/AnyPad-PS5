@@ -110,7 +110,19 @@ int main(void) {
         if(r.fd<0 && now>=next_scan) { usb_open(&r); next_scan=now+2000; }
         if(r.fd>=0) {
             int got=read_pad(&r,&state);
-            if(got<0) { usb_close(&r); pad_state_reset(&state); log_line("Receiver disconnected; controls released"); }
+            if(got<0) {
+                usb_close(&r);
+                pad_state_reset(&state);
+                if(created) {
+                    vpad_update(0,&state);
+                    /* Pending identification must finish before reusing its slot. */
+                    if(!vpad_live(0)) next_scan=now+5000;
+                    vpad_remove(0);
+                    created=0;
+                    ready=0;
+                }
+                log_line("Receiver disconnected; virtual controller removed");
+            }
             if(got>0) {
                 if(!reports++) log_line("First valid controller report");
                 if(!created) { created=vpad_add(0); created_at=now; if(!created) break; }

@@ -29,7 +29,9 @@ It does not detach system drivers or touch the internal Bluetooth transport.
 A steady player-one LED command is sent on connect.
 
 Inputs are held between USB reports because this receiver may report only changes.
-USB disconnect/errors release controls. The user confirmed the controller works
+USB disconnect/errors release controls and remove the virtual controller.
+Reconnecting the receiver and pressing a button creates it again. The user
+confirmed Eden’s controller count follows reconnects and disconnects. The user confirmed the controller works
 after turning it off and back on. Out-of-range radio loss has not been tested.
 
 Logs: `/data/redgear/usb.log`. Create `/data/redgear/stop` to stop the bridge.

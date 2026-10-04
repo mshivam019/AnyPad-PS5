@@ -4,5 +4,14 @@
 # Editor and system noise.
 .DS_Store
 *.swp
+/prototype/__pycache__/
+/prototype/pairing.h
+/prototype/pairing.json
+/.sdk/
 # The released ELFs and their hashes in dist/ ARE tracked on purpose:
 # they record exactly what was delivered to the console.
+
+# Local network builds embed a private pairing token.
+/dist/Redgear-PS5-network-prototype.elf
+/dist/Redgear-PS5-network-prototype.elf.sha256
+/dist/Redgear-PS5-network-prototype.zip

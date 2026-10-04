@@ -1,0 +1,14 @@
+{
+  "upstream": "https://github.com/sinfiltros/AnyPad-PS5",
+  "upstream_commit": "9475e9f88b7d06f890ca3bb3f16537bcc503eff4",
+  "sdk": "ps5-payload-dev/sdk v0.43",
+  "elf_sha256": "a8d01818d09176622a4202b4e1368acb6e194efba72e605d033c1bee688acd38",
+  "route": "Linux joystick -> UDP 8096 -> PS5 virtual DualSense",
+  "ps5_firmware_9_00": "User confirmed menu input via network prototype; direct USB subsequently confirmed",
+  "checks": [
+    "sender mapping and real localhost UDP roundtrip passed",
+    "C packet validation under address/undefined sanitizers passed",
+    "inherited vpad checks passed",
+    "Live network receiver input and menu A confirmed by user"
+  ]
+}

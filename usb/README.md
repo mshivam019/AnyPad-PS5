@@ -3,8 +3,9 @@
 Based on sinfiltros/AnyPad-PS5 (GPL-3.0-or-later). Tested October 4, 2026 on
 firmware 9.00. The user confirmed controller input works with the receiver plugged
 directly into the PS5. Console logs confirm USB reports and virtual-pad binding
-to the foreground signed-in user. Individual games, rumble, controller power-off, and USB hotplug have
-not yet been verified.
+to the foreground signed-in user. The user also confirmed gameplay and turning
+the controller off and back on work. Game titles were not recorded. USB receiver
+unplug/replug has not yet been verified.
 
 ## Use without a laptop
 
@@ -28,8 +29,8 @@ It does not detach system drivers or touch the internal Bluetooth transport.
 A steady player-one LED command is sent on connect.
 
 Inputs are held between USB reports because this receiver may report only changes.
-USB disconnect/errors release controls. Controller radio loss while the receiver
-stays plugged in still needs testing; unplug the receiver if controls stick.
+USB disconnect/errors release controls. The user confirmed the controller works
+after turning it off and back on. Out-of-range radio loss has not been tested.
 
 Logs: `/data/redgear/usb.log`. Create `/data/redgear/stop` to stop the bridge.
 The network and USB versions share a lock and cannot run simultaneously.

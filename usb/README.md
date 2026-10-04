@@ -4,8 +4,7 @@ Based on sinfiltros/AnyPad-PS5 (GPL-3.0-or-later). Tested October 4, 2026 on
 firmware 9.00. The user confirmed controller input works with the receiver plugged
 directly into the PS5. Console logs confirm USB reports and virtual-pad binding
 to the foreground signed-in user. The user also confirmed gameplay and turning
-the controller off and back on work. Game titles were not recorded. USB receiver
-unplug/replug has not yet been verified.
+the controller off and back on work. USB receiver unplug/replug also passed. Game titles were not recorded.
 
 ## Use without a laptop
 
